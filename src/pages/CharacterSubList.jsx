@@ -8,8 +8,9 @@ export default function CharacterSubList() {
   if(error) return <div>Something went wrong</div>
   return <div className="CharacterList">
     {data.characters.results.map(character => {
+      let url=`/${character.id}`
       return <div>
-        <img src={character.image} alt="" />
+        <a href={url}><img src={character.image} alt="" /></a>
         <h2>{character.name}</h2>
       </div>
     })}

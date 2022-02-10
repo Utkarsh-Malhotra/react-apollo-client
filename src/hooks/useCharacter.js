@@ -1,16 +1,5 @@
-import { useQuery, gql } from '@apollo/client';
-const GET_CHARACTERS = gql`
-  query {
-    characters {
-      results {
-        id
-        name
-        image
-        gender
-      }
-    }
-  }
-`;
+import { useQuery } from '@apollo/client';
+import { GET_CHARACTERS } from '../queries/gqlQueries';
 export const useCharacters = () => {
   const { loading, error, data } = useQuery(GET_CHARACTERS);
 
